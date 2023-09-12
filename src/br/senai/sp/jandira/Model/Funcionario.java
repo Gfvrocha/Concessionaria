@@ -12,6 +12,7 @@ public class Funcionario {
     /** Instanciar Scanner */
     Scanner teclado = new Scanner((System.in));
 
+
     public void cadastrarFuncionario(){
 
         System.out.println("----------------------------------------");
@@ -40,8 +41,11 @@ public class Funcionario {
         System.out.println("=0=0=0=0= Cadastro Finalizado =0=0=0=0=");
         System.out.println("----------------------------------------");
 
+    }
 
+    public void bonusVenda(Veiculo objVeiculo){
 
-
+        comissao += objVeiculo.preco * 0.10;
+        System.out.println("Você terá um bonus de R$" + comissao);
     }
 }

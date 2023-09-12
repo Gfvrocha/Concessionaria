@@ -48,7 +48,10 @@ public class Menu {
                     boolean validaVenda =  objVenda.realizarVenda(objVeiculo, objCliente);
 
                     if (validaVenda){
-                        objCliente.dinheiroDisponivel = objCliente.dinheiroDisponivel - objVeiculo.preco;
+                        objCliente.dinheiroDisponivel -= objVeiculo.preco;
+                        System.out.println("O saldo do cliente é: " + objCliente.dinheiroDisponivel);
+
+                        objFuncionario.bonusVenda(objVeiculo);
                     }
 
                     break;
@@ -62,7 +65,11 @@ public class Menu {
                 System.out.println("Escolha uma opção Válida!");
             }
 
+
+
         }
+
+
 
     }
 }
