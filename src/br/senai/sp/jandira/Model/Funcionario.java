@@ -1,5 +1,7 @@
 package br.senai.sp.jandira.Model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Funcionario {
@@ -11,6 +13,8 @@ public class Funcionario {
 
     /** Instanciar Scanner */
     Scanner teclado = new Scanner((System.in));
+
+    List<Funcionario> listFuncionario = new ArrayList<>();
 
 
     public void cadastrarFuncionario(){
@@ -47,5 +51,19 @@ public class Funcionario {
 
         comissao += objVeiculo.preco * 0.10;
         System.out.println("Você terá um bonus de R$" + comissao);
+    }
+
+    public void adicionarFuncionario(Funcionario objFuncionario){
+        listFuncionario.add(objFuncionario);
+
+    }
+
+    public void listarFuncionario(){
+        for(Funcionario objFuncionario : listFuncionario){
+            System.out.println(objFuncionario.nome);
+
+
+        }
+
     }
 }
