@@ -66,4 +66,14 @@ public class Cliente {
         }
 
     }
+
+    public Cliente pesquisarComprador(String nome){
+
+        for (Cliente cliente : listCliente){
+            if (cliente.nome.equalsIgnoreCase(nome)){
+                return cliente;
+            }
+        }
+        return null;
+    }
 }

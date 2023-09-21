@@ -66,4 +66,25 @@ public class Funcionario {
         }
 
     }
+
+    public Funcionario pesquisarVendedor(String nome){
+        for (Funcionario vendedor : listFuncionario){
+            if (vendedor.nome.equalsIgnoreCase(nome )){
+                return vendedor;
+            }
+        }
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

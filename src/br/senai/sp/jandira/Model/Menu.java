@@ -10,8 +10,11 @@ public class Menu {
 
 
         Cliente refListCliente = new Cliente();
+
         Funcionario refListFuncionario = new Funcionario();
+
         Veiculo refListVenda = new Veiculo();
+
         Veiculo refListVeiculo = new Veiculo();
 
         Venda objVenda = new Venda();
@@ -61,19 +64,47 @@ public class Menu {
                     refListFuncionario.adicionarFuncionario(objFuncionario);
                     break;
 
-              /*  case 4:
-                    boolean validaVenda =  objVenda.realizarVenda(objVeiculo, objCliente);
+                case 4:
+                        refListCliente.listarCliente();
+                        System.out.println("Informe o nome do cliente: ");
+                        String nomeComprador = teclado.nextLine();
+                        teclado.nextLine();
 
-                    if (validaVenda){
-                        objCliente.dinheiroDisponivel -= objVeiculo.preco;
-                        System.out.println("O saldo do cliente é: " + objCliente.dinheiroDisponivel);
+                        refListVenda.listarVeiculos();
+                        System.out.println("Informe o modelo do veiculo: ");
+                        String modeloVeiculo = teclado.nextLine();
 
-                        objFuncionario.bonusVenda(objVeiculo);
-                    }
+                        refListFuncionario.listarFuncionario();
+                        System.out.println("Informe o nome do vendendor: ");
+                        String nomeVendedor = teclado.nextLine();
+
+
+                        Cliente objComprador = refListCliente.pesquisarComprador(nomeComprador);
+                        Veiculo objVeiculoVenda = refListVeiculo.localizarVeiculoCompra(modeloVeiculo);
+                        Funcionario objVendedor = refListFuncionario.pesquisarVendedor(nomeVendedor);
+
+                        boolean formaPagamento = objVenda.avaliaFormaPagamento();
+
+                        boolean validaVenda = false;
+                        boolean validaFinanciamento = false;
+
+                        if (formaPagamento){
+                            validaVenda = objVenda.realizarVenda(objVeiculoVenda, objComprador);
+                        } else {
+                            validaFinanciamento = objVenda.realizarFinanciamento(objComprador, objVeiculoVenda);
+                        }
+
+
+                        if (validaVenda || validaFinanciamento) {
+                            System.out.println("Parabéns");
+                            objComprador.dinheiroDisponivel -= objVeiculoVenda.preco;
+                            System.out.println("O saldo do cliente é: " + objComprador.dinheiroDisponivel);
+
+                            objVendedor.bonusVenda(objVeiculoVenda);
+                            System.out.println("O Funcionario recebeu: " + objVendedor.comissao);
+                        }
 
                     break;
-
-               */
 
                 case 5:
                     refListVenda.listarVeiculos();
