@@ -1,4 +1,4 @@
-package br.senai.sp.jandira.Model;
+package br.senai.sp.jandira.model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,74 +6,63 @@ import java.util.Scanner;
 
 public class Cliente {
 
-    /** Declarar Variaveis */
-
+    /**
+     * Declarar Variaveis
+     * */
     String nome, email, endereco;
-    long telefone, cfp, rg;
+    long telefone, cpf, rg;
 
     double dinheiroDisponivel;
 
-    /** Instanciar Scanner */
-    Scanner teclado = new Scanner((System.in));
+    /** Instancia o Scanner */
+    Scanner teclado = new Scanner(System.in);
 
-    List<Cliente> listCliente = new ArrayList<>();
-
+    List<Cliente> listClientes = new ArrayList<>();
 
     public void cadastrarCliente(){
 
-        System.out.println("----------------------------------------");
-        System.out.println("=0=0=0=0= Cadastro Cliente =0=0=0=0=");
+        System.out.println("---------  Cadastro Cliente  ---------");
         System.out.println("Qual é o nome do Cliente: ");
         nome = teclado.nextLine();
-
         System.out.println("Informe o CPF: ");
-        cfp = teclado.nextLong();
-
-        System.out.println("Informe o Rg: ");
+        cpf = teclado.nextLong();
+        System.out.println("Informe o RG: ");
         rg = teclado.nextLong();
-
         System.out.println("Informe o Telefone: ");
         telefone = teclado.nextLong();
         teclado.nextLine();
-
-        System.out.println("Informe o e-mail: ");
+        System.out.println("Informe o email: ");
         email = teclado.nextLine();
-
-        System.out.println("Informe o Endereço: ");
+        System.out.println("Informe o endereço: ");
         endereco = teclado.nextLine();
-
         System.out.println("Informe quanto você tem: [R$] ");
         dinheiroDisponivel = teclado.nextDouble();
-
-        System.out.println("=0=0=0=0= Cadastro Finalizado =0=0=0=0=");
+        teclado.nextLine();
+        System.out.println("--------  Cadastro Finalizado  ---------");
         System.out.println("----------------------------------------");
-
-
 
 
     }
 
     public void adicionarCliente(Cliente objCliente){
-        listCliente.add(objCliente);
-
+        listClientes.add(objCliente);
     }
 
     public void listarCliente(){
-        for(Cliente objCliente : listCliente){
+        for (Cliente objCliente : listClientes){
             System.out.println(objCliente.nome);
-
-
         }
-
     }
 
     public Cliente pesquisarComprador(String nome){
 
-        for (Cliente cliente : listCliente){
+        for (Cliente cliente : listClientes){
             if (cliente.nome.equalsIgnoreCase(nome)){
                 return cliente;
             }
         }
         return null;
     }
+
+
 }

@@ -1,20 +1,23 @@
 package br.senai.sp.jandira;
 
-import br.senai.sp.jandira.Model.Cliente;
-import br.senai.sp.jandira.Model.Menu;
-import br.senai.sp.jandira.Model.Veiculo;
+import br.senai.sp.jandira.model.Cliente;
+import br.senai.sp.jandira.model.Menu;
+import br.senai.sp.jandira.model.Veiculo;
 
 public class App {
     public static void main(String[] args) {
 
-        System.out.println("=0=0=0=0=0=0=0=0=0=0=0=0=0=0=");
-        System.out.println("=0=0=     Bem vindo     =0=0=");
-        System.out.println("=0=0=    Agência Senai  =0=0=");
-        System.out.println("=0=0=0=0=0=0=0=0=0=0=0=0=0=0=\n");
+        System.out.println("/-/-/-/-/-/--/-/-/-/-/-/-/-/");
+        System.out.println("/-        Bem Vindo       -/");
+        System.out.println("/-      Agência Senai     -/");
+        System.out.println("/-/-/-/-/-/--/-/-/-/-/-/-/-/");
+
+        Menu objMenu = new Menu();
+        objMenu.menu();
 
 
-       Menu objMenu = new Menu();
-       objMenu.menu();
+
+
     }
 
 }
